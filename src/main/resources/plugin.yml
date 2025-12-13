@@ -1,0 +1,16 @@
+name: EmojiChatReplacer
+version: '${project.version}'
+main: me.superchirok1.emojichatreplacer.EmojiChatReplacer
+prefix: ECReplacer
+authors: [SuperCHIROK1]
+description: A simple emoji manager for chat
+
+commands:
+  ecr:
+    aliases:
+      - emojichatreplacer
+    description: "Reloads plugin"
+
+permissions:
+  ecr.reload:
+    description: "Reloads plugin"
