@@ -1,9 +1,12 @@
 name: EmojiChatReplacer
 version: '${project.version}'
+api-version: "1.16"
 main: me.superchirok1.emojichatreplacer.EmojiChatReplacer
 prefix: ECReplacer
 authors: [SuperCHIROK1]
 description: A simple emoji manager for chat
+softdepend:
+  - PlaceholderAPI
 
 commands:
   ecr:

@@ -1,5 +1,6 @@
-package me.superchirok1.emojichatreplacer;
+package me.superchirok1.emojichatreplacer.command;
 
+import me.superchirok1.emojichatreplacer.EmojiChatReplacer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -26,6 +27,7 @@ public class ECRCommand implements CommandExecutor {
         plugin.reloadConfig();
         plugin.config.setup(plugin.getConfig().getConfigurationSection("settings"));
         plugin.service.init(plugin.config.values.emojis());
+        plugin.papiService.init();
         return true;
     }
 
