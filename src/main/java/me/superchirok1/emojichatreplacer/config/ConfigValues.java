@@ -5,6 +5,7 @@ import org.bukkit.configuration.ConfigurationSection;
 public record ConfigValues(
         boolean enabled,
         boolean metrics,
+        String colorizer,
         boolean papiSupport,
         String permToReload,
         boolean commandReplace,

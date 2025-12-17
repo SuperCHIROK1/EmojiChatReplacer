@@ -31,6 +31,7 @@ public final class EmojiChatReplacer extends JavaPlugin {
         colorizer = new TextColorizer();
         papiService = new PAPIService(this);
 
+        colorizer.init(settings);
         config.setup(settings);
         service.init(config.values.emojis());
         papiService.init();

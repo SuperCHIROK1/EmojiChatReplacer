@@ -4,6 +4,7 @@ import me.superchirok1.emojichatreplacer.EmojiChatReplacer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.ConfigurationSection;
 
 public class ECRCommand implements CommandExecutor {
 
@@ -23,11 +24,13 @@ public class ECRCommand implements CommandExecutor {
             return true;
         }
 
-        sendMsg(sender, reloaded);
         plugin.reloadConfig();
-        plugin.config.setup(plugin.getConfig().getConfigurationSection("settings"));
+        ConfigurationSection section = plugin.getConfig().getConfigurationSection("settings");
+        plugin.colorizer.init(section);
+        plugin.config.setup(section);
         plugin.service.init(plugin.config.values.emojis());
         plugin.papiService.init();
+        sendMsg(sender, reloaded);
         return true;
     }
 

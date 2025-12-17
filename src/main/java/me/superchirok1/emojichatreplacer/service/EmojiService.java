@@ -19,6 +19,10 @@ public class EmojiService {
         this.plugin = plugin;
     }
 
+    private String colorize(String text) {
+        return plugin.colorizer.get.colorize(text);
+    }
+
     public String replace(Player player, String string) {
         for (Map.Entry<String, Emoji> pair: emojis.entrySet()) {
             if (string.contains(pair.getKey())) {
@@ -28,8 +32,8 @@ public class EmojiService {
                 }
             }
         }
-        string = plugin.papiService.parse(player, string);
-        return plugin.colorizer.format(string);
+
+        return plugin.papiService.parse(player, string);
     }
 
     public void init(ConfigurationSection section) {
@@ -43,6 +47,7 @@ public class EmojiService {
                     : section.getString(key);
 
             if (value==null || value.isEmpty()) continue;
+            value = colorize(value);
 
             String perm = sect != null
                     ? sect.getString("perm")

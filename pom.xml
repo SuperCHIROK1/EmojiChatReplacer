@@ -6,7 +6,7 @@
 
   <groupId>me.superchirok1</groupId>
   <artifactId>EmojiChatReplacer</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <packaging>jar</packaging>
 
   <name>EmojiChatReplacer</name>
@@ -38,6 +38,10 @@
                         <pattern>org.bstats</pattern>
                         <shadedPattern>me.superchirok1.emojichatreplacer.metrics</shadedPattern>
                     </relocation>
+                    <relocation>
+                        <pattern>net.kyori</pattern>
+                        <shadedPattern>me.superchirok1.emojichatreplacer.libs</shadedPattern>
+                    </relocation>
                 </relocations>
             </configuration>
             <executions>
@@ -62,6 +66,10 @@
       <repository>
           <id>spigotmc-repo</id>
           <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+      </repository>
+      <repository>
+          <id>papermc-repo</id>
+          <url>https://repo.papermc.io/repository/maven-public/</url>
       </repository>
       <repository>
           <id>sonatype</id>
@@ -94,6 +102,24 @@
           <groupId>org.bstats</groupId>
           <artifactId>bstats-bukkit</artifactId>
           <version>3.1.0</version>
+          <scope>compile</scope>
+      </dependency>
+      <dependency>
+          <groupId>net.kyori</groupId>
+          <artifactId>adventure-api</artifactId>
+          <version>4.18.0</version>
+          <scope>compile</scope>
+      </dependency>
+      <dependency>
+          <groupId>net.kyori</groupId>
+          <artifactId>adventure-text-minimessage</artifactId>
+          <version>4.18.0</version>
+          <scope>compile</scope>
+      </dependency>
+      <dependency>
+          <groupId>net.kyori</groupId>
+          <artifactId>adventure-platform-bukkit</artifactId>
+          <version>4.3.2</version>
           <scope>compile</scope>
       </dependency>
   </dependencies>

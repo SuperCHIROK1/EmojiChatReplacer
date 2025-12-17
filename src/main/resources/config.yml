@@ -4,6 +4,11 @@ settings:
   enabled: true
   # Отправлять статистику об использовании? (анонимно)
   metrics: true
+  # Форматирование сообщений.
+  # legacy - &цвет.
+  # minimessage - <цвет>.
+  # Подробнее о MiniMessage: https://docs.papermc.io/adventure/minimessage/format/
+  colorizer: legacy
   # Поддержка PlaceholderAPI.
   papi_support: true
   # Право, которое нужно для перезагрузки плагина. (по умолчанию "ecr.reload")
@@ -14,7 +19,7 @@ settings:
   # Если вы не хотите, чтобы сообщение было отправлено, напишите вместо значения null или nil.
   messages:
     no_perms: nil
-    reloaded: "&aПлагин &eEmojiChatReplacer&a перезагружен!"
+    reloaded: "&#66FFE0&lEmoji | &#71FF49Плагин успешно перезагружен"
   # Настройки эмодзи.
   emojis:
     ':)': '☺'
